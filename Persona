@@ -113,28 +113,69 @@ public class Persona {
         if(id==0)
         {
             System.out.println("Bienvenido : "+ per[id].getNombre());
+            do {
+                System.out.println("Su dinero actual es de : "+ per[id].getCantidad());
+                System.out.println("1. Desposito");
+                System.out.println("2. Retirada");
+                System.out.println("3. Salir");
+                m= sc.nextInt();
+                switch(m)
+                {
+                    case 1:
+                        System.out.print("Cuanto Dinero desea depositar: ");
+                        cantidad=sc.nextFloat();
+                        per[id].setCantidad(getCantidad()+cantidad);
+                        break;
+                    case 2:
+                        System.out.print("Cuanto Dinero desea Retirar: ");
+                        cantidad=sc.nextFloat();
+                        if(per[id].getCantidad()<cantidad)
+                        {
+                            System.out.println("Su dinero actual no le permite retirar esta cantidad");
+                        }else {
+                            per[id].setCantidad(getCantidad()+cantidad);
+                        }
+
+                        break;
+                    case 3:
+                        break;
+                }
+            }while(m<3) ;
         }else if(id==1)
         {
             System.out.println("Bienvenido : "+ per[id].getNombre());
+            
+            do {
+                System.out.println("Su dinero actual es de : "+ per[id].getCantidad());
+                System.out.println("1. Desposito");
+                System.out.println("2. Retirada");
+                System.out.println("3. Salir");
+                m= sc.nextInt();
+                switch(m)
+                {
+                    case 1:
+                        System.out.print("Cuanto Dinero desea depositar: ");
+                        cantidad=sc.nextFloat();
+                        per[id].setCantidad(getCantidad()+cantidad);
+                        break;
+                    case 2:
+                        System.out.print("Cuanto Dinero desea Retirar: ");
+                        cantidad=sc.nextFloat();
+                        if(per[id].getCantidad()<cantidad)
+                        {
+                            System.out.println("Su dinero actual no le permite retirar esta cantidad");
+                        }else {
+                            per[id].setCantidad(getCantidad()+cantidad);
+                        }
+
+                        break;
+                    case 3:
+                        break;
+                }
+            }while(m<3) ;
         }
-        do {
-            System.out.println("1. Desposito");
-            System.out.println("2. Retirada");
-            System.out.println("3. Salir");
-            m= sc.nextInt();
-            switch(m)
-            {
-                case 1:
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-            }
-        }while(m<3) ;
+        
     }
 
 
 }
-
-
