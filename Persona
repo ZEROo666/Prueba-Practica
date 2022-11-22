@@ -1,1 +1,140 @@
+import java.util.Scanner;
+
+public class Persona {
+    String nombre;
+    float cantidad;
+    int id;
+    int password;
+    Persona per[]= new Persona[2]; //agrego 2 personas para ingreso
+
+    public Persona(String nombre, float cantidad, int id, int password) {
+        this.nombre = nombre;
+        this.cantidad = cantidad;
+        this.id = id;
+        this.password = password;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public float getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(float cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getPassword() {
+        return password;
+    }
+
+    public void setPassword(int password) {
+        this.password = password;
+    }
+    Scanner sc=new Scanner(System.in);
+
+    public void ingreso(){
+        for(int i=0; i<2;i++)
+        {
+            per[i] = new Persona("",0,0,0);
+            System.out.println("---------------Datos Persona " + (i + 1) + "---------------");
+            System.out.println("Cual es su nombre: ");
+            nombre = sc.nextLine();
+            per[i].setNombre(nombre);
+            System.out.println("Cual es su contraseña: ");
+            password = sc.nextInt();
+            per[i].setPassword(password);
+            per[i].setId(i);
+        }
+    }
+    public void mostrarDatos()
+    {
+        for (Persona per : per ) {
+
+        }
+
+        for(int j=0; j<2;j++)
+        {
+
+            System.out.println(" ----------- Nombre "+(j+1)+"-----------");
+            System.out.println("ID: "+per[j].getId());
+            System.out.println("Persona: "+per[j].getNombre());
+        }
+
+    }
+    public void menu(){
+        int men;
+        Persona per = new Persona("",0,0,0);
+        do {
+            System.out.println("---------------Bienvenidos al Banco ATM---------------");
+            System.out.println("1. Registro de Usuario");
+            System.out.println("2. Lista de Usuarios");
+            System.out.println("3. Ingreso de Usuario");
+            System.out.println("4. Salir");
+            System.out.print("5. Ingreso su opcion");
+            men= sc.nextInt();
+            switch(men)
+            {
+                case 1:
+                    per.ingreso();
+                    break;
+                case 2:
+                    per.mostrarDatos();
+                    break;
+                case 3:
+                    per.pass();
+                    break;
+                case 4:
+                    break;
+            }
+        }while(men<4);
+    }
+    public void pass(){
+        int m;
+        for (Persona per : per ) {
+
+        }
+        System.out.print("Ingrese su ID: ");
+        id=sc.nextInt();
+        if(id==0)
+        {
+            System.out.println("Bienvenido : "+ per[id].getNombre());
+        }else if(id==1)
+        {
+            System.out.println("Bienvenido : "+ per[id].getNombre());
+        }
+        do {
+            System.out.println("1. Desposito");
+            System.out.println("2. Retirada");
+            System.out.println("3. Salir");
+            m= sc.nextInt();
+            switch(m)
+            {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+            }
+        }while(m<3) ;
+    }
+
+
+}
+
 
